@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <title>Particulas</title>
+    <link rel="stylesheet" href="simulador.css" type="text/css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="custom.css">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">CoulS</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Inicio</a></li>
+            <li><a href="#about">Acerca de Nosotros</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row no-gutters" style="">
+        <div class="col-sm-6 col-md-9" id='contenedor' style="height:100vh; padding:0">
+
+            <canvas >Tu navegador no soporta canvas</canvas>
+        </div>
+        <div class="col-sm-6 col-md-3"  style="height:100vh; overflow:auto">
+          <h3>Datos de Simulación</h3>
+          <button type="button" class="btn btn-success" onclick="should_move=1">Play</button>
+          <button type="button" class="btn btn-info" onclick="should_move=0">Pause</button>
+          <button type="button" class="btn btn-danger" onclick="should_move=0; reset();">Stop</button>
+          <form class="form" style="padding:5px">
+            <div class="form-group">
+
+              <label>Velocidad (Recíproco)</label>
+              <input type="number" class="form-control" id="inp_velocity" placeholder="Velocidad" onchange="VELOCIDAD  = 1/this.value">
+            </div>
+
+          </form>
+          <div class="form-check">
+            <label class="form-check-label">
+              <label for="checked_graph">Graficos: </label>
+              <input class="form-check-input position-static" type="checkbox" id="checked_graph" value="option1" aria-label="..." checked onchange="GRAPHS=this.checked">
+            </label>
+          </div>
+
+          <p class="lead">Total</p>
+          <small id="f_total">Ftotal : </small><br>
+          <small id="e_total">Etotal : </small><br><br>
+          <p class="lead">Particulas</p>
+          <div id="container_forces">
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="config.js" charset="utf-8"></script>
+    <script src="physics.js"></script>
+    <script src="caso_r.js"></script>
+    <script src="simulador.js"></script>
+    <script>
+
+    </script>
+  </body>
+</html>
